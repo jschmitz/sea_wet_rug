@@ -1,0 +1,9 @@
+gemset_name=sea_wet_rug
+
+rvm use ruby-1.9.3-p194
+
+if [ -z "`rvm gemset list | grep $gemset_name`" ]
+then
+  rvm gemset create $gemset_name
+fi
+rvm gemset use $gemset_name

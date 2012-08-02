@@ -1,0 +1,21 @@
+<%= form_for(@property_code) do |f| %>
+  <% if @property_code.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@property_code.errors.count, "error") %> prohibited this property_code from being saved:</h2>
+
+      <ul>
+      <% @property_code.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :property_code %><br />
+    <%= f.text_field :property_code %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Listing dnis_entries</h1>
+
+<table>
+  <tr>
+    <th>Property code</th>
+    <th>Dnis entry</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dnis_entries.each do |dnis_entry| %>
+  <tr>
+    <td><%= dnis_entry.property_code.property_code %></td>
+    <td><%= dnis_entry.dnis_entry %></td>
+    <td><%= dnis_entry.username %></td>
+    <td><%= dnis_entry.password %></td>
+    <td><%= link_to 'Show', dnis_entry %></td>
+    <td><%= link_to 'Edit', edit_dnis_entry_path(dnis_entry) %></td>
+    <td><%= link_to 'Destroy', dnis_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dnis entry', new_dnis_entry_path %>

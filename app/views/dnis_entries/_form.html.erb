@@ -1,0 +1,33 @@
+<%= form_for(@dnis_entry) do |f| %>
+  <% if @dnis_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dnis_entry.errors.count, "error") %> prohibited this dnis_entry from being saved:</h2>
+
+      <ul>
+      <% @dnis_entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :property_code_id %><br />
+    <%= select("dnis_entry", "property_code_id", PropertyCode.all.collect {|p| [ p.property_code, p.id ] }, {:prompt => 'Select Property Code'}) %>
+  </div>
+  <div class="field">
+    <%= f.label :dnis_entry %><br />
+    <%= f.text_field :dnis_entry %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Listing property_codes</h1>
+
+<table>
+  <tr>
+    <th>Property code</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @property_codes.each do |property_code| %>
+  <tr>
+    <td><%= property_code.property_code %></td>
+    <td><%= link_to 'Show', property_code %></td>
+    <td><%= link_to 'Edit', edit_property_code_path(property_code) %></td>
+    <td><%= link_to 'Destroy', property_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Property code', new_property_code_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Property code:</b>
+  <%= @dnis_entry.property_code.property_code %>
+</p>
+
+<p>
+  <b>Dnis entry:</b>
+  <%= @dnis_entry.dnis_entry %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @dnis_entry.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @dnis_entry.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_dnis_entry_path(@dnis_entry) %> |
+<%= link_to 'Back', dnis_entries_path %>
