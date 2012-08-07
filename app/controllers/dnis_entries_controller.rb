@@ -14,10 +14,11 @@ class DnisEntriesController < ApplicationController
   # GET /dnis_entries/1.json
   def show
     @dnis_entry = DnisEntry.find(params[:id])
+    dnis_entry = @dnis_entry.attributes.merge({property_code_name: @dnis_entry.property_code.property_code })
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @dnis_entry }
+      format.json { render json: dnis_entry }
     end
   end
 
